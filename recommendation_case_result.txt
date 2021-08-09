@@ -1,0 +1,47 @@
+PROJECT result
+
+
+In this project, I developed a recommendation system for an online grocery store.
+When a customer is landed on the cart page, I provided a
+recommended product list which is related to the items in the cart.
+
+events.json : add2cart events for a period of time
+meta.json : meta info of products in the events
+
+data dictionary 
+event : whether the product added to basket or not (it can be "cart", "view", "purchase" etc. 
+        But in this data, only added to cart. Also column includes one unique variable.
+         Therefore it is not important)
+sessionid : Every user have many sessionid but sessionid is belong to one user. There is one to many relation. 
+            In the same session, it can be added many products.
+eventtime: time for product added to basket. 
+brand : product brand
+category : product category
+subcategory : product subcategory
+name : product name. product name column is critical for recommendation when that column used by name similarity
+price : product price
+
+Firstly, I also analyzed data in exp_data_analysis.ipynb file at data analysis-visualization folder. I explored 
+data, missing data, product distribution for month, category count based on many situation, 
+Word distribution(frequent words)
+
+There are many text column in data. I researched to do recommendation using name and other text column. 
+Next step, I searched best practice for recommendation system with related products. I researched 
+hepsiburada and other e-commerce sites for how recommend related products in these sites
+
+Finally, I decided to use TfidfVectorizer and cosine similarity. I evaluated name similarity between products.
+I applied different preprocesing methods like get new feature(price category) to improve my result.
+Also, I applied text preprocesing techniques. Like get new feature(price category). 
+
+Other method I used is doc2vec. I used same techniques for preprocessing. But similarity rate is worse
+than other method.
+
+I also started to apply association rules method, but it is not finished. Even so I added the codes for 
+this methods.You can see at association_rules.py. If I had more time, I would have been finished this method too.
+
+WHAT I WOULD HAVE DONE, IF I HAD MORE TIME?
+If I had more time, I want to researh another method like word2vec method, content and collaborative hybrid methods
+When I researched the best practice, I have not faced an example where the time column is used. BNevertheless, I
+think that event time can be useful column. Due to for example, watermelon was purchased in summer more than autumn 
+or event hour can be affect if it is used in recommendation. If I had time, I would have tried to work for 
+entegration time column to model. 

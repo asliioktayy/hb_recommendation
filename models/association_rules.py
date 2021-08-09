@@ -4,6 +4,7 @@ from mlxtend.frequent_patterns import apriori
 from mlxtend.frequent_patterns import association_rules
 import numpy as np
 import pandas as pd
+import pickle
 
 from get_data import events, meta
 
@@ -21,7 +22,6 @@ basket = (event_data.groupby(['sessionid', 'productid'])['price']
           .sum().unstack().reset_index().fillna(0)
           .set_index('sessionid'))
 
-print("******************")
 
 def encode_units(x):
     if x <= 0:
@@ -33,7 +33,13 @@ basket_sets = basket.applymap(encode_units)
 basket_sets = basket_sets.fillna(0)
 
 frequent_itemsets = apriori(basket_sets, min_support=0.01, use_colnames=True)
+results = list(frequent_itemsets)
 
-rules = association_rules(frequent_itemsets, metric="lift", min_threshold=0.01)
+    
+with open("./extracted_model/assoc_rule.pkl", 'wb') as file:  
+    pickle.dump(frequent_itemsets, file)
 
-print(rules.sort_values(by="lift", ascending=False))
+rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1).sort_values(by="lift", ascending=False)
+
+print(rules.head(10000))
+print(rules[rules["antecedents"]=="(HBV00000PV6O6)"])

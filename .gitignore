@@ -141,3 +141,4 @@ notebooks/
 data/
 extracted_df/
 extracted_model/
+.vscode/

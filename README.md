@@ -19,17 +19,7 @@ events.json : add2cart events for a period of time
 meta.json : meta info of products in the events 
 
 ### Technologies used
-uvicorn==0.14.0
-fastapi==0.68.0
-pandas==1.2.0
-nltk==3.6.2
-numpy==1.19.5
-matplotlib==3.3.3
-scikit-learn==0.24.1
-mlxtend==0.18.0
-plotly==5.1.0
-gensim==4.0.1
-Jinja2==3.0.1
+uvicorn, fastapi, pandas, nltk, numpy, matplotlib, scikit-learn, mlxtend, plotly, gensim, Jinja2
 
 ### What is there inside the box?
 Folder or File | Function

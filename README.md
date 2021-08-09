@@ -7,6 +7,7 @@
 * Technologies used
 * What is there inside the box?
 * Running of model and api
+* Packacing
 
 
 ### About Project
@@ -54,7 +55,7 @@ recommendation_case_result.txt | results
 
 
 ### Running of model and api
-You should firstly tfidf_cos_sim.py or doc2vec.py file. Because model should be created. After you could run api
+You should run firstly tfidf_cos_sim.py or doc2vec.py file. Because model should be created. After you could run api
 
 To run models :
 `python3 doc2vec.py`
@@ -66,6 +67,9 @@ To run api :
 link for tf_idf : http://0.0.0.0:8000/tfidf_cos_sim/{productid}
 link for doc2vec : http://0.0.0.0:8000/doc2vec/{productid}
 
+### Packacing
+`docker build -t hb_recommendation .`
+`docker run -p 8000:8000 -d --name api hb_recommendation`
 
 
 

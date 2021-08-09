@@ -57,11 +57,11 @@ recommendation_case_result.txt | results
 You should firstly tfidf_cos_sim.py or doc2vec.py file. Because model should be created. After you could run api
 
 To run models :
-python3 doc2vec.py
-python3 tfidf_cos_sim.py
+`python3 doc2vec.py`
+`python3 tfidf_cos_sim.py`
 
 To run api :
-python3 api.py 
+`python3 api.py`
 
 link for tf_idf : http://0.0.0.0:8000/tfidf_cos_sim/{productid}
 link for doc2vec : http://0.0.0.0:8000/doc2vec/{productid}

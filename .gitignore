@@ -139,11 +139,9 @@ cython_debug/
 venv_hb/
 notebooks/
 data/
-#extracted_df/
-events_doc2vec.csv
-events_tfidf.csv
-#extracted_model/
-assoc_rule.pkl
-doc2vec.pkl
-linear_kernel_similarity.npy
+extracted_df/events_doc2vec.csv
+extracted_df/events_tfidf.csv
+extracted_model/assoc_rule.pkl
+extracted_model/doc2vec.pkl
+extracted_model/linear_kernel_similarity.npy
 .vscode/

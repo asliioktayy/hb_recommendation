@@ -145,3 +145,4 @@ extracted_model/assoc_rule.pkl
 extracted_model/doc2vec.pkl
 extracted_model/linear_kernel_similarity.npy
 .vscode/
+.DS_Store

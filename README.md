@@ -57,6 +57,7 @@ To run api :
 link for tf_idf : http://0.0.0.0:8000/tfidf_cos_sim/{productid}
 link for doc2vec : http://0.0.0.0:8000/doc2vec/{productid}
 
+For example : http://0.0.0.0:8000/tfidf_cos_sim/HBV00000NE0TW
 ### Packacing
 `docker build -t hb_recommendation .`
 `docker run -p 8000:8000 -d --name api hb_recommendation`
